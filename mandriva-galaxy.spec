@@ -2,8 +2,8 @@
 
 Summary:	Mandriva-galaxy
 Name:		mandriva-galaxy	
-Version:	2007.1
-Release:	%mkrel 12
+Version:	2008.0
+Release:	%mkrel 1
 Epoch:		2
 License:	GPL
 URL:		http://www.mandriva.com/
@@ -46,14 +46,8 @@ launch Mandriva applications such as the Mandriva Control Center.
 %setup -q
 
 %build
-make -f admin/Makefile.common
-
-
-	%configure --enable-final \
+%configure2_5x --enable-final \
 		--disable-debug \
-%if "%{_lib}" != "lib"
-   --enable-libsuffix="%(A=%{_lib}; echo ${A/lib/})" \
-%endif
 		--with-xinerama \
 		--disable-rpath
 
@@ -63,26 +57,7 @@ make -f admin/Makefile.common
 rm -rf %buildroot
 
 %makeinstall_std
-# Bad hack - Tired
-chmod 0755 %buildroot/%_bindir/*
-
-install -d -m 0755 %buildroot/%_datadir/gnome/autostart
-cp -f %buildroot/%_datadir/autostart/*.desktop %buildroot/%_datadir/gnome/autostart
-
-
-install -d -m 0755 %buildroot/%_iconsdir/
-install -m 0644 $RPM_BUILD_DIR/%name-%version/mdkhtmlbrowser/mandrivagalaxy.png %buildroot/%_iconsdir/
-
-install -d -m 0755 %buildroot/%_datadir/nautilus/default-desktop/
-install -m 0644 $RPM_BUILD_DIR/%name-%version/mdkhtmlbrowser/Welcome.desktop %buildroot/%_datadir/nautilus/default-desktop/
-
-install -d -m 0755 %buildroot/%_datadir/apps/kdesktop/DesktopLinks/
-install -m 0644 $RPM_BUILD_DIR/%name-%version/mdkhtmlbrowser/Welcome.desktop %buildroot/%_datadir/apps/kdesktop/DesktopLinks/
-
-install -d -m 0755 %buildroot/%_datadir/mdk/mandrivagalaxy/
-install -m 0644 $RPM_BUILD_DIR/%name-%version/mdkhtmlbrowser/*.png %buildroot/%_datadir/mdk/mandrivagalaxy/
-
-
+# legacy links
 (
 	cd %buildroot/%_bindir/
 	ln -s mandrivagalaxy.real mandrakegalaxy.real
@@ -92,8 +67,6 @@ install -m 0644 $RPM_BUILD_DIR/%name-%version/mdkhtmlbrowser/*.png %buildroot/%_
 	cd %buildroot/%_iconsdir/
 	ln -s mandrivagalaxy.png mandrakegalaxy.png
 )
-
-rm -f %buildroot/%_datadir/applnk/Applications/*.desktop
 
 %find_lang mandrivagalaxy
 
@@ -107,21 +80,17 @@ rm -fr %buildroot
 
 %_datadir/autostart/*.desktop
 %_datadir/gnome/autostart/*.desktop
-#
-#%_datadir/applnk/Applications/*.desktop
 %dir %_datadir/mdk/
 %dir %_datadir/mdk/mandrivagalaxy/
 %_datadir/mdk/mandrivagalaxy/*.html
 %_datadir/mdk/mandrivagalaxy/*.png
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/X11/xinit.d/mandriva-galaxy
-#
 %_iconsdir/*.png
-#%_iconsdir/large/*.png
 
 %_datadir/nautilus/default-desktop/*.desktop
 %_datadir/apps/kdesktop/DesktopLinks/*.desktop
 
-%dir %_datadir/mdk/mandrivagalaxy/images/
+%dir %_datadir/mdk/mandrivagalaxy/style/images/
 %_datadir/mdk/mandrivagalaxy/style/images/*.png
 %_datadir/mdk/mandrivagalaxy/style/images/*.jpeg
 %_datadir/mdk/mandrivagalaxy/style/*.css
