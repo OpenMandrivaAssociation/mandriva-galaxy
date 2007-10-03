@@ -92,7 +92,6 @@ rm -fr %buildroot
 
 %dir %_datadir/mdk/mandrivagalaxy/style/images/
 %_datadir/mdk/mandrivagalaxy/style/images/*.png
-%_datadir/mdk/mandrivagalaxy/style/images/*.jpeg
 %_datadir/mdk/mandrivagalaxy/style/*.css
 #%_datadir/mdk/mandrivagalaxy/*.js
 
