@@ -76,7 +76,7 @@ rm -fr %buildroot
 %files -f mandrivagalaxy.lang
 %defattr(-,root,root)
 #
-%_bindir/*
+%attr(755,root,root) %_bindir/*
 
 %_datadir/autostart/*.desktop
 %_datadir/gnome/autostart/*.desktop
