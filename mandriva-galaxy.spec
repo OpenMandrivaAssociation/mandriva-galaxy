@@ -15,7 +15,7 @@ Group:		System/Configuration/Other
 Source:			%name-%version.tar.bz2
 
 BuildRoot:		%_tmppath/%name-%release-root
-BuildRequires:	XFree86-devel
+BuildRequires:	X11-devel
 BuildRequires:	arts-devel
 BuildRequires:	fam-devel
 BuildRequires:	kdelibs-devel
