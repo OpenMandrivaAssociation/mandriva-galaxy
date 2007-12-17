@@ -14,7 +14,6 @@ Group:		System/Configuration/Other
 # no extra source or patch are allowed here.
 Source:			%name-%version.tar.bz2
 
-BuildRoot:		%_tmppath/%name-%release-root
 BuildRequires:	X11-devel
 BuildRequires:	arts-devel
 BuildRequires:	fam-devel
