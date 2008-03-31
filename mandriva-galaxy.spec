@@ -3,7 +3,7 @@
 Summary:	Mandriva-galaxy
 Name:		mandriva-galaxy	
 Version:	2008.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 Epoch:		2
 License:	GPL
 URL:		http://www.mandriva.com/
