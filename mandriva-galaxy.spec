@@ -9,6 +9,7 @@ Group: System/Configuration/Other
 Source: %{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: qt4-devel
+BuildRequires: qt4-linguist
 BuildRequires: kde4-macros
 
 Requires: mandriva-galaxy-data
