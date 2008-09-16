@@ -1,7 +1,7 @@
 Name: mandriva-galaxy	
 Summary: Mandriva-galaxy
 Version: 2009.0
-Release: %mkrel 3
+Release: %mkrel 4
 Epoch: 2
 License: GPL
 URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/mandriva-galaxy-kde4
@@ -31,6 +31,7 @@ rm -rf $RPM_BUILD_ROOT
 pushd build
 %makeinstall_std
 popd
+ln -s %{_bindir}/mandriva-galaxy %{buildroot}/%{_bindir}/mandrivagalaxy.real
 
 %clean 
 rm -rf $RPM_BUILD_ROOT 
@@ -38,6 +39,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %attr(755,root,root) %{_bindir}/mandriva-galaxy
+%attr(755,root,root) %{_bindir}/mandrivagalaxy.real
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/X11/xinit.d/mandriva-galaxy.xinit
 %{_datadir}/autostart/mandriva-galaxy.desktop
 %{_datadir}/gnome/autostart/mandriva-galaxy.desktop
