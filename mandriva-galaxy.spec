@@ -1,7 +1,7 @@
 Name: mandriva-galaxy	
 Summary: Mandriva-galaxy
 Version: 2009.0
-Release: %mkrel 4
+Release: %mkrel 5
 Epoch: 2
 License: GPL
 URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/mandriva-galaxy-kde4
@@ -10,7 +10,7 @@ Source: %{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: qt4-devel
 BuildRequires: qt4-linguist
-BuildRequires: kde4-macros
+BuildRequires: cmake
 
 Requires: mandriva-galaxy-data
 
@@ -23,14 +23,12 @@ launch Mandriva applications such as the Mandriva Control Center.
 %setup -q -n mandriva-galaxy
 
 %build 
-%cmake_kde4 
+%cmake_qt4
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-pushd build
-%makeinstall_std
-popd
+%makeinstall_std -C build
 ln -s %{_bindir}/mandriva-galaxy %{buildroot}/%{_bindir}/mandrivagalaxy.real
 
 %clean 
