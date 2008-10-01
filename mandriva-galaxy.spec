@@ -1,13 +1,15 @@
 Name: mandriva-galaxy	
 Summary: Mandriva-galaxy
 Version: 2009.0
-Release: %mkrel 5
+Release: %mkrel 6
 Epoch: 2
 License: GPL
 URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/mandriva-galaxy-kde4
 Group: System/Configuration/Other
 Source: %{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires: kde4-macros
+BuildRequires: kdelibs4-devel
 BuildRequires: qt4-devel
 BuildRequires: qt4-linguist
 BuildRequires: cmake
