@@ -1,7 +1,7 @@
 Name: mandriva-galaxy	
 Summary: Mandriva-galaxy
 Version: 2009.0
-Release: %mkrel 8
+Release: %mkrel 9
 Epoch: 2
 License: GPL
 URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/mandriva-galaxy-kde4
@@ -11,7 +11,6 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: kde4-macros
 BuildRequires: kdelibs4-devel
 BuildRequires: qt4-devel
-BuildRequires: qt4-linguist
 BuildRequires: cmake
 
 Requires: mandriva-galaxy-data
@@ -43,6 +42,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/X11/xinit.d/mandriva-galaxy.xinit
 %{_datadir}/autostart/mandriva-galaxy.desktop
 %{_datadir}/gnome/autostart/mandriva-galaxy.desktop
-%dir %{_datadir}/mandriva-galaxy
-%{_datadir}/mandriva-galaxy/*
 %{_iconsdir}/mandriva-galaxy.png
+%{_datadir}/locale/*/LC_MESSAGES/mandriva-galaxy.mo
