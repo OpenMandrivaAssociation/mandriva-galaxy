@@ -1,7 +1,7 @@
 Name: mandriva-galaxy	
 Summary: Mandriva-galaxy
 Version: 2009.1
-Release: %mkrel 12
+Release: %mkrel 13
 Epoch: 2
 License: GPL
 URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/mandriva-galaxy-kde4
