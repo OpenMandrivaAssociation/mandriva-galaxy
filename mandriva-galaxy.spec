@@ -28,12 +28,12 @@ launch Mandriva applications such as the Mandriva Control Center.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std -C build
 ln -s %{_bindir}/mandriva-galaxy %{buildroot}/%{_bindir}/mandrivagalaxy.real
 
 %clean 
-rm -rf $RPM_BUILD_ROOT 
+rm -rf %{buildroot} 
 
 %files
 %defattr(-,root,root)
