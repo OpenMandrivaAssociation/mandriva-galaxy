@@ -1,7 +1,7 @@
 Name: mandriva-galaxy
 Summary: Mandriva-galaxy
 Version: 2011.0
-Release: 6
+Release: 7
 Epoch: 2
 License: GPL
 URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/mandriva-galaxy-kde4
