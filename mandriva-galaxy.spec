@@ -4,7 +4,7 @@ Version: 2011.0
 Release: 10
 Epoch: 2
 License: GPL
-URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/mandriva-galaxy-kde4
+URL: https://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/mandriva-galaxy-kde4
 Group: System/Configuration/Other
 Source: %{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
